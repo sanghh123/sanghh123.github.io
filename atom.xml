@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2022-06-05T02:44:06.976Z</updated>
+  <updated>2022-06-07T07:47:22.472Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>new article</title>
+    <link href="/2022/06/07/new-article/"/>
+    <id>/2022/06/07/new-article/</id>
+    <published>2022-06-07T07:47:22.000Z</published>
+    <updated>2022-06-07T07:47:22.472Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>hexo使用心得</title>
