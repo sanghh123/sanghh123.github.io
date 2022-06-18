@@ -398,6 +398,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic.rmb.bdstatic.com/2b76d054339f3fb334cb276d7a33ad52.jpeg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic.rmb.bdstatic.com/2b76d054339f3fb334cb276d7a33ad52.jpeg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      new article</h1>
+      <p class="entry-census">
+        <span>
+          <a href="hojun.cn">
+            <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg7.51tietu.net%2Fpic%2F2019-082104%2Fqbs0rcj0czbqbs0rcj0czb.jpg&refer=http%3A%2F%2Fimg7.51tietu.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1656748835&t=9a41b1e7c38a2d6e1ea63a3df5e95800">
+          </a>
+        </span>
+        <span>
+          <a href="hojun.cn">youbiyu</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-6-7<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -405,15 +429,208 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-          <header class="entry-header">
-            <h1 class="entry-title">new article</h1>
-            <p class="entry-census">youbiyu&nbsp;·&nbsp;2022-6-7&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
         <div class="entry-content">
-          
+          <p><a href="https://yremp.live/hexo-sakura/" target="_blank" rel="noopener">https://yremp.live/hexo-sakura/</a> 可以调节</p>
+<p>vue学习笔记</p>
+<p>v-text 不会转义 v-html会转义 </p>
+<p>v-on:click&#x3D;“方法”    点击事件    方法定义在Vue里面    v-on: 可以简写为 @ </p>
+<p>方法格式</p>
+<p>handleClick: function () {<br>                    alert(123)   “网页反馈”</p>
+<p>​                    this.content&#x3D;“wolrd” 点击后页面信息变化</p>
+<p>}</p>
+<p>属性绑定和双向绑定</p>
+<p>v-bind 可以缩写为：   属性绑定 鼠标放在上面会有显示</p>
+<p>v-bind:title&#x3D;”‘dwadadss’+title”&gt;hello world  指向’dwadadss‘+vue方法中定义的title</p>
+<p>双向绑定</p>
+<p>input 框 v-model&#x3D;“content”   可以改变vue方法中content的内容</p>
+<p>v-if 会销毁div标签内容</p>
+<p>v-show不会销毁频繁变换时用v-show</p>
+<p>v-for 一组数据来循环显示页面的   循环list的列表第几项的值放在index里面    key提升每一项的渲染key里面内容不可以相同</p>
+<ul>
+            <li v-for="(item,index) of list" :key="index"></li>
+        </ul>
+```html
+
+<script>
+    new Vue({
+        el:"#root",  
+        data:{
+            show:true,
+            list:[1 ,2 , 3]
+        },
+```
+综合
+
+<pre><code>&lt;div id=&quot;root&quot;&gt;
+        &lt;div&gt;
+            &lt;input v-model=&quot;inputValue&quot;/&gt;     框中数据到inputvalue值中
+            &lt;button @click=&quot;handleSubmit&quot;&gt; tijiao&lt;/button&gt;点击事件触发函数 
+        &lt;/div&gt;
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(item,index) of list&quot; :key=&quot;index&quot;&gt;{{item}}&lt;/li&gt;
+              item循环list中的值 key不可以相同的值 index用于记录次数
+         &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    
+        new Vue({
+            el:&quot;#root&quot;,  
+            data:{
+                inputValue:&#39;&#39;,
+                list: []
+            },	
+            methods:{
+                handleSubmit: function () {
+                    this.list.push(this.inputValue)  将inputValue值提交到list值中
+                    this.inputValue=&#39;&#39;
+                }
+            }
+        } ) 
+</code></pre>
+<pre><code>        &lt;ul&gt;
+            &lt;todo-item v-for=&quot;(item,index) of list&quot;   
+            :key=&quot;index&quot;
+            :content=&quot;item&quot;&gt;&lt;/todo-item&gt;
+
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+         Vue.component(&#39;todo-item&#39;, {   定义了一个全局组件
+         	props:[&#39;content&#39;],    将content提交后才可以使用content
+         	template:&#39;&lt;li&gt;{{content}}&lt;/li&gt;&#39;   
+         })
+         var TodoItem={   定义了一个局部主键 必须在实例的模板里定义
+         temp：&#39;&lt;li&gt;item&lt;/li&gt;&#39;
+         }
+         new Vue({
+         components:{
+         &#39;tode-item&#39;:TodoItem
+         }
+         })
+</code></pre>
+<pre><code>&lt;html&gt; 
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;v-if,v-show,v-for&lt;/title&gt;
+&lt;script src =&quot;./vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;div&gt;
+            &lt;input v-model=&quot;inputValue&quot;/&gt;   改变父组件中inpuvalue的值
+            &lt;button @click=&quot;handleSubmit&quot;&gt; tijiao&lt;/button&gt;点击事件触发handleSubmit
+        &lt;/div&gt;
+        &lt;ul&gt;
+            &lt;todo-item v-for=&quot;(item,index) of list&quot; 
+            :key=&quot;index&quot;
+            :content=&quot;item&quot;    组件显示什么内容
+            :index=&quot;index&quot;     对应的标记
+            @delete=&quot;handleDelete&quot; 父组件监听子组件的delete事件    
+            &gt;&lt;/todo-item&gt;
+
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+         Vue.component(&#39;todo-item&#39;, {
+         	props:[&#39;content&#39;,&#39;index&#39;],
+         	template:&#39;&lt;li @click=&quot;handleClick&quot;&gt;{{content}}&lt;/li&gt;&#39;,触发子组件的handleClick方法
+         	methods:{
+         		handleClick: function () {
+         			// body...
+         			this.$emit(&#39;delete&#39;,this.index)  网页弹出写着delete的框 
+         		}
+         	}
+         })
+
+        new Vue({
+            el:&quot;#root&quot;,  
+
+            data:{
+                inputValue:&#39;&#39;,
+                list: []
+            },	
+            methods:{
+                handleSubmit: function () {
+                    this.list.push(this.inputValue)   将数据推到list中
+                    this.inputValue=&#39;&#39;   input框清除内容
+                },
+            handleDelete:function(index){
+                this.list.splice(index,1)  删除对应的数据   从dinex开始删除1个数据
+            }
+
+            }
+        } )    
+        
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code>vue学习通过vue脚手架   通过input框存储数据将数据显示到下面 后点击可以删除该数据
+学习网站https://www.imooc.com/video/16986/0
+&lt;template&gt;
+  &lt;div&gt;
+     &lt;div&gt;
+         &lt;input v-model=&quot;inputValue&quot;/&gt;         改变下面 inputValue的内容
+
+         &lt;button @click=&quot;handleSubmit&quot;&gt;提交&lt;/button&gt;
+     &lt;/div&gt;
+   &lt;ul&gt;
+     &lt;todo-item  v-for=&quot;(item,index) of list&quot;
+     :key=&quot;index&quot;
+     :content=&quot;item&quot;
+     :index=&quot;index&quot;
+     @delete=&quot;handleDelete&quot;
+     &gt;&lt;/todo-item&gt;
+     
+   &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import TodoItem from &#39;./components/TodoItem&#39;     用于连接子父组件
+
+export default {                
+  components:{                          
+     &#39;todo-item&#39;:TodoItem   对于组件的声明  可以使用了 在前面声明
+    },
+  data () {
+    return {
+      inputValue:&#39;&#39;,     
+      list:[]
+    }
+  },
+  methods:{
+    handleSubmit(){
+      this.list.push(this.inputValue)    推数据到list列表
+      this.inputValue=&#39;&#39;
+    },
+    handleDelete (index){
+          this.list.splice(index,1)   用于删除数据
+    }
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
+子组件用于将数据反映到页面上
+&lt;template&gt;
+&lt;li @click=&quot;handleDelete&quot;&gt;{{content}}&lt;/li&gt;   点击页面的数据后触发
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props:[&#39;content&#39;,&#39;index&#39;],  接受父组件的  content，index对应的数据 
+  methods:{
+      handleDelete(){
+          this.$emit(&#39;delete&#39;,this.index)     与父组件通信触发delete事件   将index数据返还
+      }
+  }
+}
+&lt;/script&gt;
+&lt;style scoped&gt;   scoped作用域为本组件不加会作用于全局
+
+&lt;/style&gt;
+</code></pre>
+</script>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -445,15 +662,15 @@
           
             <div class="post-nepre full next">
           
-            <a href="/2022/06/05/test/" rel="next">
+            <a href="/2018/12/12/Hexo-Theme-Sakura/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F8fa6ee0306a67831c0d7f72be52a79294ec4781d.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1658129814&t=0a932c1f6d5768c322d41d9522158642" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F8fa6ee0306a67831c0d7f72be52a79294ec4781d.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1658129814&t=0a932c1f6d5768c322d41d9522158642">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                hexo使用心得</h3>
+                Hexo-Theme-Sakura</h3>
                 <hr>
               </div>
             </a>
