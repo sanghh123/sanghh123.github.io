@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2022-06-10T05:23:45.858Z</updated>
+  <updated>2022-06-19T07:54:35.194Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>es6</title>
+    <link href="/2022/06/11/es6/"/>
+    <id>/2022/06/11/es6/</id>
+    <published>2022-06-11T04:45:55.000Z</published>
+    <updated>2022-06-19T07:54:35.194Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;es6学习&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;const&lt;/code&gt; 声明只能防止变量标识符的重新分配&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Object.freeze&lt;/code&gt;。任何更改对象的尝试都将被拒绝，如果脚本在严格模式下运行，将抛出错误&lt;/p&gt;
+&lt;pre&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>new article</title>
@@ -30,6 +57,33 @@
         
         
           &lt;p&gt;&lt;a href=&quot;https://yremp.live/hexo-sakura/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://yremp.live/hexo-sakura/&lt;/a&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js</title>
+    <link href="/2022/06/05/test/"/>
+    <id>/2022/06/05/test/</id>
+    <published>2022-06-05T02:41:26.000Z</published>
+    <updated>2022-06-19T07:55:18.792Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;js基础：6.10 &lt;/p&gt;
+&lt;p&gt;数组 &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;const ourArray = [50, 40, 30];
+ourArray[0] = 15;    
         
       
     
